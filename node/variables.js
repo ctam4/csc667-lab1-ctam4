@@ -25,3 +25,21 @@ obj.b = 10;
 // For Practice
 
 // declare an object with an object as a property
+const myObject = { // let
+  a: 'hello',
+  b: {
+    c: {
+      d: 'world',
+    },
+  },
+};
+
+console.log(myObject.a);
+myObject.a = '4';
+console.log(myObject.a);
+console.log(myObject.b.c.d); // access nested objects
+
+// hashmap
+const hash = {};
+hash['k'] = 'value';
+console.log(hash);
