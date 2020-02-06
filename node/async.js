@@ -5,9 +5,17 @@ const sleepyHello = () => new Promise(resolve => setTimeout(() => {
   resolve();
 }, 1200));
 
-const test = async () => {
-  await sleepyHello();
+const test = async () => { // this is now a promise
+  try {
+    await sleepyHello();
+  } catch (e) {
+    console.log('This failed');
+  }
   console.log('Now this');
 };
 
-test();
+// sleepyHello()
+// .then(() => console.log('Now This'));
+
+test()
+  .then(() => console.log('Now Here!'));

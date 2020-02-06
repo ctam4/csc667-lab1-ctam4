@@ -1,15 +1,17 @@
-const promiseExample = () => {
+const promiseExample = (name) => {
   return new Promise((resolve, reject) => {
     // Do anything you want
-    // finishes when resolve() is called      
+    // finishes when resolve() is called
     setTimeout(() => {
-      resolve();
+      resolve(name);
      }, 3000);
   });
 };
 
-promiseExample()
+promiseExample('Calvin')
+  .then(answer => 'Hello ' + answer)
   .then((res) => console.log(res))
-  .catch((e) => console.log('Something went wrong!'));
+  .catch((e) => console.log('Something went wrong!'))
+  .then(() => console.log('still going'));
 
 console.log('hi');
